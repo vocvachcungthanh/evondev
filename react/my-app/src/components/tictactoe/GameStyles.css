@@ -1,0 +1,22 @@
+.game-board {
+  margin: 25px auto 25px auto;
+  width: 500px;
+  height: 500px;
+  border: 1px solid rgb(226, 226, 226);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+.game-cell {
+  border: 1px solid rgb(233, 233, 233);
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: green;
+}
+.text-red {
+  color: red;
+}
