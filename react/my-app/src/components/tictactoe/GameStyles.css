@@ -6,6 +6,11 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
+  background: linear-gradient(
+    45deg,
+    rgba(146, 156, 0, 0.549),
+    rgba(171, 219, 234, 0.278)
+  );
 }
 .game-cell {
   border: 1px solid rgb(233, 233, 233);
@@ -19,4 +24,39 @@
 }
 .text-red {
   color: red;
+}
+.game-reset {
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  border-radius: 999px;
+  border: 0;
+  background-color: #f62682;
+  height: 50px;
+  color: #fff;
+  font-weight: 700;
+  margin: 0px auto;
+  cursor: pointer;
+}
+.game-winner {
+  background-color: rgba(255, 255, 255, 0.644);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 75px;
+  line-height: 1;
+  font-weight: bold;
+  color: chocolate;
+  margin-bottom: 0;
+}
+.App {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: url("./bg_game.jpg") no-repeat;
+  background-size: cover;
 }

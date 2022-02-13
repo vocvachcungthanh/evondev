@@ -14,9 +14,20 @@ function Game() {
     setBoard(boardClone);
     setXIsNext(!xIsNext);
   };
+  const handleResetGame = () => {
+    setBoard(Array(9).fill(null));
+  };
+  console.log(winner);
   return (
     <div className="game">
+      {winner && (
+        <div className="game-winner">{winner ? `Winner is ${winner}` : ""}</div>
+      )}
       <Board cells={board} onClick={handleClick} />
+
+      <button className="game-reset" onClick={handleResetGame}>
+        Reset game
+      </button>
     </div>
   );
 }

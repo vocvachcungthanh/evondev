@@ -4,6 +4,7 @@ import Game from "./components/tictactoe/Game.component";
 import Toggle from "./components/toggle/Toggle.component";
 function App() {
   const [view, setView] = React.useState(false);
+  console.log(view);
   return (
     <div className="App">
       <Toggle handleChange={(e) => setView(e)}></Toggle>
