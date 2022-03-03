@@ -1,14 +1,33 @@
 import React from "react";
 import "./App.css";
-import Game from "./components/tictactoe/Game.component";
-import Toggle from "./components/toggle/Toggle.component";
+// import Card2 from "./components/card/Card2.component";
+
+import CardList from "./components/card/CardList.component";
+import CardTailwind from "./components/card/CardTailwind.component";
+// import { GlobalStyles } from "./GlobalStyles";
+// import { ThemeProvider } from "styled-components";
+// const theme = {
+//   colors: {
+//     blue: "#2979ff",
+//   },
+// };
 function App() {
-  const [view, setView] = React.useState(false);
-  console.log(view);
   return (
-    <div className="App">
-      <Toggle handleChange={(e) => setView(e)}></Toggle>
-      {view && <Game />}
+    // <ThemeProvider theme={theme}>
+    //   <GlobalStyles />
+    //   <CardList>
+    //     <Card2 secondary />
+    //     <Card2 />
+    //     <Card2 />
+    //     <Card2 />
+    //     <Card2 />
+    //     <Card2 />
+    //   </CardList>
+    // </ThemeProvider>
+    <div>
+      <CardList>
+        <CardTailwind primary />
+      </CardList>
     </div>
   );
 }
