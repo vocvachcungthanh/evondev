@@ -1,9 +1,7 @@
 import React from "react";
+import StopWatch from "./components/useRef/StopWatch.component";
 
-import HackerNewsWithReduce from "./components/news/HackerNewsWithReduce.component";
-
-function App() {
-  return <HackerNewsWithReduce />;
-}
-
+const App = () => {
+  return <StopWatch />;
+};
 export default App;
