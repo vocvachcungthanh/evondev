@@ -1,7 +1,7 @@
 import React from "react";
-import StopWatch from "./components/useRef/StopWatch.component";
+import Blog from "./components/customehook/Blog.component";
 
 const App = () => {
-  return <StopWatch />;
+  return <Blog />;
 };
 export default App;
