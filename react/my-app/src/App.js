@@ -1,7 +1,7 @@
 import React from "react";
-import Blog from "./components/customehook/Blog.component";
+import Input from "./components/form/Input.component";
 
 const App = () => {
-  return <Blog />;
+  return <Input />;
 };
 export default App;

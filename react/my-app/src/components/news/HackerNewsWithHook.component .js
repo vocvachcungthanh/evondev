@@ -1,39 +1,10 @@
-import axios from "axios";
 import React from "react";
-const HackerNews = () => {
-  const [hits, setHits] = React.useState([]);
-  const [query, setQuery] = React.useState();
-  const [loading, setLoading] = React.useState(true);
-  const [errorMessage, setErrorMessage] = React.useState("");
-  const [url, setUrl] = React.useState(
-    `https://hn.algolia.com/api/v1/search?query=${query}`
-  );
-  const isMounted = React.useRef(true);
-  React.useEffect(() => {
-    return () => {
-      isMounted.current = false;
-    };
-  }, []);
-  const handleFetchData = React.useRef({});
-  handleFetchData.current = async () => {
-    setLoading(true);
-    try {
-      const response = await axios.get(url);
-      setTimeout(() => {
-        if (isMounted.current) {
-          setHits(response.data?.hits || []);
-          setLoading(false);
-        }
-      }, 3000);
-    } catch (error) {
-      setLoading(false);
-      setErrorMessage(`The error happened ${error}`);
-    }
-  };
+import useHackerNewsApi from "../../hooks/useHackerNewApi";
+const HackerNewsWithHook = () => {
+  let url = "https://hn.algolia.com/api/v1/search?query=";
 
-  React.useEffect(() => {
-    handleFetchData.current();
-  }, [url]);
+  const { query, setQuery, setUrl, loading, errorMessage, data } =
+    useHackerNewsApi(url, { hist: [] });
   return (
     <div className="p-5 text-sm  mb-5 text-justify text-gray-700 mx-auto shadow-md w-2/4 mt-5">
       <div className="flex mb-5 gap-x-5">
@@ -62,8 +33,8 @@ const HackerNews = () => {
         <div className="loading mx-auto w-8 h-8 rounded-full border-blue-500 border-4 border-5-4 border-r-transparent animate-spin my-10"></div>
       )}
       {!loading &&
-        hits.length > 0 &&
-        hits.map((item, index) => {
+        data?.hits.length > 0 &&
+        data?.hits.map((item, index) => {
           if (item.title) {
             return (
               <h3 key={index} className="p-3 bg-gray-200 rounded-lg mb-2">
@@ -75,4 +46,4 @@ const HackerNews = () => {
     </div>
   );
 };
-export default HackerNews;
+export default HackerNewsWithHook;
