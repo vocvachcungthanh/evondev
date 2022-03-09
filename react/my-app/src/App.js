@@ -1,7 +1,7 @@
 import React from "react";
-import Input from "./components/form/Input.component";
+import MovieSearchApp from "./components/MovieSearchApp.component";
 
 const App = () => {
-  return <Input />;
+  return <MovieSearchApp />;
 };
 export default App;
